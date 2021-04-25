@@ -7,7 +7,7 @@ pkgdesc='A proprietary music streaming service'
 arch=('x86_64')
 license=('custom')
 url='https://www.spotify.com'
-depends=('alsa-lib>=1.0.14' 'gtk3' 'libxss' 'desktop-file-utils' 'openssl' 'nss' 'at-spi2-atk' 'libcurl-gnutls' 'libsm')
+depends=('alsa-lib>=1.0.14' 'gtk3' 'gtk2' 'libxss' 'desktop-file-utils' 'openssl' 'nss' 'at-spi2-atk' 'libcurl-gnutls' 'libsm')
 optdepends=('ffmpeg-compat-57: Adds support for playback of local files'
             'zenity: Adds support for importing local files'
             'libnotify: Desktop notifications')
