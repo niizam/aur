@@ -1,0 +1,21 @@
+pkgname=spotify-adblock-linux
+pkgver=1.4
+pkgrel=1
+pkgdesc='Spotify adblocker for Linux'
+arch=('x86_64')
+url=https://github.com/abba23/spotify-adblock-linux
+license=('GPL3')
+depends=('spotify')
+source=("$url/releases/download/v$pkgver/spotify-adblock.so")
+sha512sums=('SKIP')
+prepare() {
+mkdir $pkgname-$pkgver
+cd $pkgname-$pkgver
+echo -e "[Desktop Entry]\nType=Application\nName=Spotify (adblock)\nGenericName=Music Player\nIcon=spotify-client\nTryExec=spotify\nExec=env LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify %U\nTerminal=false\nMimeType=x-scheme-handler/spotify;\nCategories=Audio;Music;Player;AudioVideo;\nStartupWMClass=spotify
+" > ../spotify-adblock.desktop
+}
+package() {
+cd $pkgname-$pkgver
+install -Dm644 -t "$pkgdir"/usr/share/applications ../spotify-adblock.desktop
+install -Dm644 -t "$pkgdir"/usr/local/lib ../spotify-adblock.so
+}
