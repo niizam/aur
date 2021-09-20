@@ -21,7 +21,7 @@ options=('!strip')
 # http://repository.spotify.com/dists/testing/Release.gpg
 source=('spotify.protocol'
         'LICENSE'
-        "${pkgname}-${pkgver}-x86_64.deb::https://siasky.net/AAD_2rfteYF2V9MPnJMqtzi1-NeFLrANx2D5XprItz5lmg"
+        "${pkgname}-${pkgver}-x86_64.deb::http://mirror.cs.uchicago.edu/spotify/pool/non-free/s/spotify-client/spotify-client_1.1.42.622.gbd112320-37_amd64.deb"
         # GPG signature check
         "${pkgname}-${pkgver}-Release::http://repository.spotify.com/dists/testing/Release"
         "${pkgname}-${pkgver}-Release.sig::http://repository.spotify.com/dists/testing/Release.gpg"
