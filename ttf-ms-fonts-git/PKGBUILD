@@ -1,0 +1,16 @@
+pkgname=ttf-ms-fonts-git
+pkgver=1.0
+pkgrel=13
+pkgdesc='TTF Fonts from Microsoft'
+arch=('any')
+url="https://github.com/niizam"
+license=('custom:Microsoft')
+provides=('ttf-font' 'ttf-ms-fonts')
+conflicts=('ttf-ms-fonts')
+_files=('msfonts.tar.xz')
+source=("file:///home/nizam/Documents/msfonts.tar.xz")
+sha256sums=('24e0aa1a2dbbc994f8f2c7ad11a6017631eb41a4abe883f1f921727a08332772')
+
+package() {
+    install -Dm644 -t "$pkgdir/usr/share/fonts/TTF" *.ttf *.TTF
+}
